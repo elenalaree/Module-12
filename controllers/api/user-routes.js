@@ -78,6 +78,7 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+	
 	User.findOne({
 		where: {
 			email: req.body.email,
@@ -107,6 +108,7 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+	console.log(req.session.id);
 	if (req.session.loggedIn) {
 		req.session.destroy(() => {
 			res.status(204).end();
