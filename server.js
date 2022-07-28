@@ -4,7 +4,7 @@ const sequelize = require("./config/connection");
 const path = require('path');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
-
+const withAuth = require('./utils/auth');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
